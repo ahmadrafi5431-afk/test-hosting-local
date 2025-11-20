@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maafin Aku Sayang🥺💗</title>
+    <style>
+        body {
+            background-color: #3f4c6b;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+            margin: 0;
+            padding-top: 30px;
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        video {
+            width: 300px;
+            border-radius: 20px;
+            margin-top: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.4);
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border: none;
+            border-radius: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 40px 25px;
+        }
+
+        .iya {
+            background-color: #4CAF50;
+            color: black;
+        }
+
+        .ga {
+            background-color: #ff4e4e;
+            color: black;
+            position: relative;
+        }.heart {
+    position: absolute;
+    font-size: 25px;
+    color: #ff85d0;
+    animation: naik 2s linear forwards;
+    pointer-events: none;
+}
+
+@keyframes naik {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-150px); opacity: 0; }
+}
+    </style>
+</head>
+<body>
+
+    <h1>Princess masih marah ya? 😭</h1>
+
+    <!-- Video aman tanpa autoplay -->
+    <video controls>
+        <source src="asset/maap.mp4" type="video/mp4"> width="500" height="500" />
+        Browser kamu tidak mendukung video.
+    </video>
+
+    <p>Maafin aku yaa sayangku Jia... 🥺💗</p>
+
+    <button class="btn iya" onclick="alert('makasih sayanggg 😭💗')">IYA</button>
+
+    <button class="btn ga" id="gaBtn">GA</button>
+
+    <script>
+        const ga = document.getElementById("gaBtn");
+
+        ga.addEventListener("mouseover", () => {
+            ga.style.position = "absolute";
+            ga.style.left = Math.random() * 80 + "vw";
+            ga.style.top = Math.random() * 80 + "vh";
+        });
+    function spawnHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.textContent = "💗";
+
+        heart.style.left = Math.random() * 90 + "vw";
+        heart.style.top = Math.random() * 90 + "vh";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 2000);
+    }
+
+    // spam hati tiap 200ms
+    setInterval(spawnHeart, 200);
+    </script>
+
+</body>
+</html>
